@@ -1,6 +1,6 @@
 ﻿namespace Module2HW3_4.Interfaces
 {
-    public interface IShowMessage
+    public interface INotificationService
     {
         void ShowMessage(string message);
     }

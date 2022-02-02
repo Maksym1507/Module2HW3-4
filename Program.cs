@@ -1,4 +1,5 @@
 ﻿using Module2HW3_4.Configs;
+using Autofac;
 
 namespace Module2HW3_4
 {
@@ -7,7 +8,8 @@ namespace Module2HW3_4
         private static void Main()
         {
             var config = new Config();
-            var start = config.BuildStarter();
+            var container = config.RegisterTypes();
+            var start = container.Resolve<Starter>();
             start.Run();
         }
     }

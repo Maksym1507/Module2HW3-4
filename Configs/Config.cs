@@ -12,14 +12,14 @@ namespace Module2HW3_4.Configs
             Builder = new ContainerBuilder();
         }
 
-        private ContainerBuilder Builder { get; init; }
+        private ContainerBuilder Builder { get; set; }
 
-        public Starter BuildStarter()
+        public IContainer RegisterTypes()
         {
-            Builder.RegisterType<NotificationService>().As<IShowMessage>();
+            Builder.RegisterType<NotificationService>().As<INotificationService>();
             Builder.RegisterType<Starter>();
             var container = Builder.Build();
-            return container.Resolve<Starter>();
+            return container;
         }
     }
 }

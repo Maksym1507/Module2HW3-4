@@ -6,12 +6,12 @@ namespace Module2HW3_4
 {
     public class Starter
     {
-        public Starter(IShowMessage message)
+        public Starter(INotificationService message)
         {
             Message = message;
         }
 
-        private IShowMessage Message { get; set; }
+        private INotificationService Message { get; set; }
 
         public void Run()
         {
@@ -23,14 +23,7 @@ namespace Module2HW3_4
 
             Message.ShowMessage("Enter dog which has the biggest averrage age:");
 
-            if (dog is Husky)
-            {
-                Message.ShowMessage(husky.ToString());
-            }
-            else
-            {
-                Message.ShowMessage(spitz.ToString());
-            }
+            Message.ShowMessage(dog.ToString());
 
             dog.DoBark();
         }
