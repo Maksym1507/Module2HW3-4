@@ -18,8 +18,7 @@ namespace Module2HW3_4.Configs
         {
             Builder.RegisterType<NotificationService>().As<INotificationService>();
             Builder.RegisterType<Starter>();
-            var container = Builder.Build();
-            return container;
+            return Builder.Build();
         }
     }
 }
